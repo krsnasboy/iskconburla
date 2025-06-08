@@ -124,7 +124,7 @@
         left: 0;
         width: 0;
         height: 2px;
-        background: var(--secondary);
+        background: var(--primary);
         transition: var(--transition);
     }
 
@@ -145,7 +145,7 @@
     
     .nav-link {
         text-decoration: none;
-        color: var(--gold-dark)
+        color: rgb(36, 4, 83);
         font-weight: 500;
         font-size: 1rem; /* Reduced from 1.1rem */
         transition: var(--transition);
@@ -206,10 +206,10 @@
     }
 
     .menu-dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background-color: var(--primary);
+        width: 20px;
+        height: 4px;
+        border-radius: 40%;
+        background-color: rgb(36, 4, 83);
         transition: var(--transition);
     }
 
@@ -219,8 +219,8 @@
     }
 
     .nav-menu-btn:hover .menu-dot {
-        background-color: var(--secondary);
-        transform: scale(1.2);
+        background-color: var(--primary);
+        
     }
 
     /* Header Animation */
@@ -588,11 +588,12 @@
 
     /* Footer */
     footer {
-        background: linear-gradient(135deg, var(--dark), #1a1a1a);
+        background: linear-gradient(135deg, #102040, #060c18);
         color: white;
         padding: 80px 5% 40px;
         position: relative;
         overflow: hidden;
+        
     }
 
     footer::before {
@@ -1763,12 +1764,129 @@
     visibility: visible;
     transform: translateY(0);
 }
+
+.social-icons-footer {
+  display: flex;
+  
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.social-icons-footer .icon {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.social-icons-footer .icon svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.social-icons-footer .icon::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: linear-gradient(45deg, transparent, transparent);
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+}
+
+.social-icons-footer .icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+.social-icons-footer .icon:hover svg {
+  transform: scale(1.2);
+}
+
+/* YouTube */
+.social-icons-footer .youtube {
+  background: #FF0000;
+}
+
+.social-icons-footer .youtube:hover::before {
+  background: linear-gradient(45deg, #FF0000, #FF5E5E);
+  animation: shine 1.5s infinite;
+}
+
+/* Facebook */
+.social-icons-footer .facebook {
+  background: #3b5998;
+}
+
+.social-icons-footer .facebook:hover::before {
+  background: linear-gradient(45deg, #3b5998, #8b9dc3);
+  animation: shine 1.5s infinite;
+}
+
+/* Instagram */
+.social-icons-footer .instagram {
+  background: #f09433;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-icons-footer .instagram:hover::before {
+  background: linear-gradient(45deg, #f09433, #bc1888);
+  animation: shine 1.5s infinite;
+}
+
+/* Twitter (X) */
+.social-icons-footer .twitter {
+  background: #000000;
+}
+
+.social-icons-footer .twitter:hover::before {
+  background: linear-gradient(45deg, #000000, #434343);
+  animation: shine 1.5s infinite;
+}
+
+/* Animation */
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  20%, 100% {
+    left: 100%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .social-icons-footer {
+    gap: 15px;
+  }
+  
+  .social-icons-footer .icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .social-icons-footer .icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}
 </style>
 </head>
 <body>
 <!-- Header -->
 <header id="header">
-<a class="logo" href="#">
+<a class="logo" href="index.html">
 <img alt="ISKCON Burla logo" id="logo-img" src="https://i.imgur.com/dhcKR8L.png"/>
 <span class="logo-text">ISKCON Burla</span>
 </a>
@@ -1818,13 +1936,13 @@
 <div class="menu-dot"></div>
 </a>
 <div class="dropdown-content">
-<a href="javascript:void(0);"><i class="fas fa-home"></i> Home</a>
+<a href="index.html"><i class="fas fa-home"></i> Home</a>
+<a href="DailyDarshan.html"><i class="fas fa-images"></i> Daily Darshan</a>
 <a href="SpiritualCounseling.html"><i class="fas fa-book-open"></i> Spiritual Counceling</a>
-<a href="DailyDarshan.html"><i class="fas fa-images"></i> Gallery</a>
 <a href="TempleAdministration.html"><i class="fa-solid fa-people-roof"></i> Temple Administration</a>
 <a href="AboutUs.html"><i class="fas fa-info-circle"></i> About Us</a>
 <a href="ContactUs.html"><i class="fas fa-map-marker-alt"></i> Contact</a>
-<a class="dropdown-login-btn" href="javascript:void(0);">IYF Admin Login</a>
+<a class="dropdown-login-btn" href="Login.html">IYF Admin Login</a>
 </div>
 </li>
 </ul>
@@ -1838,10 +1956,11 @@
 <!-- Mobile Menu -->
 <div class="mobile-menu">
 <ul>
-<li><a href="javascript:void(0);"><i class="fas fa-home"></i> Home</a></li>
+<li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
 <li><a href="UpcomingEvents&Festivals.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
 <li><a href="TempleStore.html"><i class="fas fa-store"></i> Temple Store</a></li>
 <li><a href="GauSeva.html"><i class="fas fa-cow"></i> Gau Seva</a></li>
+<li><a href="DailyDarshan.html"><i class="fas fa-video"></i> Daily Darshan</a></li>
 <li class="mobile-dropdown">
 <a class="mobile-dropdown-toggle" href="javascript:void(0);"><i class="fas fa-hands-helping"></i> Seva Opportunities <i class="fas fa-chevron-down"></i></a>
 <div class="mobile-submenu">
@@ -1853,12 +1972,11 @@
 </div>
 </li>
 <li><a href="SpiritualCounseling.html"><i class="fas fa-book-open"></i> Spiritual Counceling</a></li>
-<li><a href="DailyDarshan.html"><i class="fas fa-video"></i> Gallery</a></li>
 <li><a href="TempleAdministration.html"><i class="fa-solid fa-people-roof"></i> Temple Administration</a></li>
 <li><a href="AboutUs.html"><i class="fas fa-info-circle"></i> About Us</a></li>
 <li><a href="ContactUs.html"><i class="fas fa-map-marker-alt"></i> Contact</a></li>
 </ul>
-<a class="mobile-login-btn" href="javascript:void(0);">IYF Admin Login</a> <!-- Add new link -->
+<a class="mobile-login-btn" href="Login.html">IYF Admin Login</a> <!-- Add new link -->
 </div>
 <div class="menu-overlay"></div>
 <!-- Main Content Area -->
@@ -1985,11 +2103,30 @@
 <h2 class="section-title reveal">Our Activities</h2>
 <p class="section-subtitle reveal">Engage in various spiritual activities and services at ISKCON Burla</p>
 </div>
+
+
 <div class="cards-grid">
+    <div class="card reveal">
+<div class="card-image">
+<img alt="Youth Programs" loading="lazy" src="https://i.imgur.com/youth-card.jpg"/>
+</div>
+<div class="card-content">
+<div class="card-icon">
+<i class="fa-solid fa-y"></i>
+</div>
+<h3>Youth Programs</h3>
+<p>Engaging activities and discussions for young devotees to explore spirituality through workshops, retreats, and cultural events designed specifically for youth.</p>
+<div class="card-actions-wrapper">
+<a class="card-link" href="YouthPrograms.html"><i class="fas fa-arrow-right"></i> Learn More</a>
+<a class="card-donate-btn" href="PaymentUnderConstruction.html"><i class="fas fa-donate"></i> Donate</a>
+</div>
+</div>
+</div>
 <div class="card reveal">
 <div class="card-image">
 <img alt="Temple Activities" loading="lazy" src="https://i.imgur.com/temple-card.jpg"/>
 </div>
+
 <div class="card-content">
 <div class="card-icon">
 <i class="fa-solid fa-gopuram"></i>
@@ -1998,22 +2135,6 @@
 <p>Daily arati, kirtan, and deity darshan. Join us for spiritual programs throughout the week including morning and evening aratis, guru puja, and special festivals.</p>
 <div class="card-actions-wrapper">
 <a class="card-link" href="TempleActivities.html"><i class="fas fa-arrow-right"></i> Learn More</a>
-<a class="card-donate-btn" href="PaymentUnderConstruction.html"><i class="fas fa-donate"></i> Donate</a>
-</div>
-</div>
-</div>
-<div class="card reveal">
-<div class="card-image">
-<img alt="Sunday Feast" loading="lazy" src="https://i.imgur.com/feast-card.jpg"/>
-</div>
-<div class="card-content">
-<div class="card-icon">
-<i class="fa-solid fa-utensils"></i>
-</div>
-<h3>Sunday Love Feast</h3>
-<p>Weekly spiritual gathering with kirtan, lecture, and delicious prasadam feast. A perfect opportunity for families to come together in Krishna consciousness.</p>
-<div class="card-actions-wrapper">
-<a class="card-link" href="SundayLoveFeast.html"><i class="fas fa-arrow-right"></i> Learn More</a>
 <a class="card-donate-btn" href="PaymentUnderConstruction.html"><i class="fas fa-donate"></i> Donate</a>
 </div>
 </div>
@@ -2036,20 +2157,22 @@
 </div>
 <div class="card reveal">
 <div class="card-image">
-<img alt="Youth Programs" loading="lazy" src="https://i.imgur.com/youth-card.jpg"/>
+<img alt="Sunday Feast" loading="lazy" src="https://i.imgur.com/feast-card.jpg"/>
 </div>
 <div class="card-content">
 <div class="card-icon">
-<i class="fa-solid fa-y"></i>
+<i class="fa-solid fa-utensils"></i>
 </div>
-<h3>Youth Programs</h3>
-<p>Engaging activities and discussions for young devotees to explore spirituality through workshops, retreats, and cultural events designed specifically for youth.</p>
+<h3>Sunday Love Feast</h3>
+<p>Weekly spiritual gathering with kirtan, lecture, and delicious prasadam feast. A perfect opportunity for families to come together in Krishna consciousness.</p>
 <div class="card-actions-wrapper">
-<a class="card-link" href="YouthPrograms.html"><i class="fas fa-arrow-right"></i> Learn More</a>
+<a class="card-link" href="SundayLoveFeast.html"><i class="fas fa-arrow-right"></i> Learn More</a>
 <a class="card-donate-btn" href="PaymentUnderConstruction.html"><i class="fas fa-donate"></i> Donate</a>
 </div>
 </div>
 </div>
+
+
 <div class="card reveal">
 <div class="card-image">
 <img alt="Book Distribution" loading="lazy" src="https://i.imgur.com/books-card.jpg"/>
@@ -2179,8 +2302,37 @@
 <!-- Footer -->
 <footer>
 <div class="footer-content">
+    <div class="footer-column">
+    <h3>Connect With Us</h3>
+<div class="social-icons-footer">
+  <a href="#" class="icon youtube" aria-label="YouTube">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+    </svg>
+  </a>
+  
+  <a href="#" class="icon facebook" aria-label="Facebook">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/>
+    </svg>
+  </a>
+  
+  <a href="#" class="icon instagram" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+    </svg>
+  </a>
+  
+  <a href="#" class="icon twitter" aria-label="Twitter">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.37 3H16.7l-3.99 5.15L8.7 3H3.63l6.52 8.37L2.8 21h3.67l4.39-5.68L15.3 21h5.08l-6.58-8.47L20.37 3z"/>
+
+    </svg>
+  </a>
+</div>
+</div>
 <div class="footer-column">
-<h3>Activities</h3>
+<h3>Temple Services</h3>
 <ul>
 <li><a href="DailyDarshan.html"><i class="fas fa-bell"></i> Daily Darshan</a></li>
 <li><a href="SundayLoveFeast.html"><i class="fas fa-utensils"></i> Sunday Love Feast</a></li>
@@ -2189,7 +2341,7 @@
 </ul>
 </div>
 <div class="footer-column">
-<h3>Resources</h3>
+<h3>Resources and info</h3>
 <ul>
 <li><a href="javascript:void(0);"><i class="fas fa-book-open"></i> Bhagavad-gita</a></li>
 <li><a href="javascript:void(0);"><i class="fas fa-book"></i>Srila Prabhupad Books</a></li>
@@ -2197,20 +2349,13 @@
 <li><a href="TempleAdministration.html"><i class="fa-solid fa-people-roof"></i> Temple Administration</a></li>
 </ul>
 </div>
-<div class="footer-column">
-<h3>Connect With Us</h3>
-<ul>
-    <li><a class="social-icon" href="javascript:void(0);"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
-    <li><a class="social-icon" href="javascript:void(0);"><i class="fab fa-youtube"></i> YouTube</a></li>
-    <li><a class="social-icon" href="javascript:void(0);"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-    <li><a class="social-icon" href="javascript:void(0);"><i class="fab fa-twitter"></i> 𝕏 (formerly Twitter)</a></li>
-</ul>
-</div>
+
+
 <div class="footer-column contacts-column">
     <h3>Contacts</h3>
     <ul>
-    <li><a href="tel:+1234567890"><i class="fas fa-phone"></i> +91 98765-43210</a></li>
-    <li><a href="mailto:info@iskconburla.org"><i class="fas fa-envelope"></i> info@divineiskcon.org</a></li>
+    <li><a href="tel:+1234567890"><i class="fas fa-phone"></i> +91 94371 29998</a></li>
+    <li><a href="mailto:info@iskconburla.org"><i class="fas fa-envelope"></i> info@iskconburla.com</a></li>
     <li><a href="javascript:void(0);"><i class="fas fa-clock"></i> Open Every day</a></li>
     <li><a href="javascript:void(0);" style="display: inline-block; white-space: normal; word-break: break-word;">
         <i class="fas fa-map-marker-alt"></i> ISKCON Burla, near Siphon, PC Bridge, Burla, Sambalpur, Odisha, India, 768019
@@ -2306,7 +2451,7 @@
     
     // Auto slide
     function startInterval() {
-        slideInterval = setInterval(nextSlide, 5000);
+        slideInterval = setInterval(nextSlide, 7000);
     }
     
     function resetInterval() {
@@ -2470,8 +2615,8 @@
     </script>
 <script>
 const banners = [
-      { title: 'Hare Krishna!', desc: 'We are delighted to welcome you to ISKCON Burla"s official website — explore events, seva, darshan, and more.', btn_text: 'Expplore', btn_href: 'javascript:void(0);' },
-    { title: 'Upcoming Temple Project', desc: 'Help us to build the divine temple of Krishna and together, let’s raise the walls where Krishna’s name is always sung.', btn_text: 'Donate For Temple Construction', btn_href: 'javascript:void(0);' },
+    { title: 'Hare Krishna!', desc: 'Receive blessings from the Divine', btn_text: 'Donate Now', btn_href: 'javascript:void(0);' },
+    { title: 'Upcoming Temple Project', desc: 'Help us to build the divine ...', btn_text: 'Donate For Temple Construction', btn_href: 'javascript:void(0);' },
     { title: 'Gau Seva', desc: 'Serve the sacred cows with devotion and love', btn_text: 'Support Goshala', btn_href: 'javascript:void(0);' },
     { title: 'Sacred Knowledge', desc: 'Discover the wisdom of Vedic scriptures', btn_text: 'Explore Books', btn_href: 'javascript:void(0);' }
 ];
